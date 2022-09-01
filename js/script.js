@@ -32,3 +32,21 @@
       });
   }
 
+  function displayCategory(category) {
+    const categoryCard = `
+          <div class="post_box">
+          <div class="header">
+              <h2><a href="#">${category.strCategory}</a></h2>
+              <div class="tag"></div>
+              
+          </div>
+          <img src="${category.strCategoryThumb}" alt="image" />
+          <div class="pb_right">
+              <p>${category.strCategoryDescription}</p>
+          </div>
+          <div class="cleaner"></div>
+      </div>
+     `;
+
+    gridContainer.innerHTML += categoryCard;
+  }
