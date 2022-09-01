@@ -4,3 +4,15 @@
   let riddleContainer = document.getElementById("riddle");
   let answer = document.getElementById("riddle_answer");
 
+  function getRandomRiddle() {
+    let options = {
+      metthod: "GET",
+    };
+
+    fetch(riddleURL, options)
+      .then((response) => response.json())
+      .then((data) => {
+        riddleContainer.innerHTML = data[0].question;
+        answer.innerHTML = data[0].answer;
+      });
+  }
