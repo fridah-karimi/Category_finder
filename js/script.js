@@ -16,3 +16,19 @@
         answer.innerHTML = data[0].answer;
       });
   }
+  //create aa function to retrive the category from the api
+
+  function getCategory() {
+    let options = {
+      metthod: "GET",
+    };
+
+    fetch(URL, options)
+      .then((response) => response.json())
+      .then((data) => {
+        data.categories.forEach((category) => {
+          displayCategory(category);
+        });
+      });
+  }
+
